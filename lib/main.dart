@@ -29,8 +29,8 @@ class _StoryPageState extends State<StoryPage> {
           image: DecorationImage(
               image: AssetImage('images/background.png'), fit: BoxFit.cover),
         ),
-        padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-        constraints: BoxConstraints.expand(),
+        padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+        constraints: const BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,7 +41,7 @@ class _StoryPageState extends State<StoryPage> {
                   child: Text(
                     //Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
                     storyBrain.getStory(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 25.0,
                     ),
                   ),
@@ -59,43 +59,46 @@ class _StoryPageState extends State<StoryPage> {
                       storyBrain.nextStory(1);
                     });
                   },
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                     backgroundColor:
                         MaterialStatePropertyAll<Color>(Colors.red),
                   ),
                   child: Text(
                     //Step 13 - Use the storyBrain to get the text for choice 1.
                     storyBrain.getChoice1(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Expanded(
                 flex: 2,
-                //TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
-                //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
-                child: ElevatedButton(
-                  onPressed: () {
-                    //Choice 2 made by user.
-                    //Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
-                    setState(() {
-                      storyBrain.nextStory(2);
-                    });
-                  },
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.blue),
-                  ),
-                  child: Text(
-                    //Step 14 - Use the storyBrain to get the text for choice 2.
-                    storyBrain.getChoise2(),
-                    style: TextStyle(
-                      fontSize: 20.0,
+                //Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
+                //Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
+                child: Visibility(
+                  visible: storyBrain.buttonShouldBeVisible(),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      //Choice 2 made by user.
+                      //Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
+                      setState(() {
+                        storyBrain.nextStory(2);
+                      });
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Colors.blue),
+                    ),
+                    child: Text(
+                      //Step 14 - Use the storyBrain to get the text for choice 2.
+                      storyBrain.getChoise2(),
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                 ),

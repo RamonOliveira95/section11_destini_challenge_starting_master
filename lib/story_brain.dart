@@ -5,40 +5,40 @@ import 'package:section11_destini_challenge_starting_master/story.dart';
 class StoryBrain {
 //Step 7 - Uncomment the lines below to include storyData as a private property in StoryBrain. Hint: You might need to change something in story.dart to make this work.
 
-  List<Story> _storyData = [
+  final List<Story> _storyData = [
     Story(
       storyTitle:
-          'Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: "Need a ride, boy?".',
-      choice1: 'I\'ll hop in. Thanks for the help!',
-      choice2: 'Better ask him if he\'s a murderer first.',
+          'Seu carro estourou um pneu em uma estrada sinuosa no meio do nada sem sinal de celular. Você decide pedir carona. Uma caminhonete enferrujada para perto de você. Um homem de chapéu de abas largas e olhos sem alma abre a porta do carona para você e pergunta: "Precisa de carona, rapaz?".',
+      choice1: 'Vou aceitar. Obrigado pela ajuda!',
+      choice2: 'Melhor perguntar se ele é um assassino primeiro.',
     ),
     Story(
-      storyTitle: 'He nods slowly, unphased by the question.',
-      choice1: 'At least he\'s honest. I\'ll climb in.',
-      choice2: 'Wait, I know how to change a tire.',
-    ),
-    Story(
-      storyTitle:
-          'As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box.',
-      choice1: 'I love Elton John! Hand him the cassette tape.',
-      choice2: 'It\'s him or me! You take the knife and stab him.',
+      storyTitle: 'Ele balança a cabeça lentamente, indiferente à pergunta.',
+      choice1: 'Pelo menos ele é honesto. vou subir.',
+      choice2: 'Espere, eu sei como trocar um pneu.',
     ),
     Story(
       storyTitle:
-          'What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?',
-      choice1: 'Restart',
+          'Quando começa a dirigir, o estranho começa a falar sobre seu relacionamento com a mãe. Ele fica cada vez mais irritado a cada minuto. Ele pede para você abrir o porta-luvas. Dentro você encontra uma faca ensanguentada, dois dedos decepados e uma fita cassete de Elton John.',
+      choice1: 'Eu amo Elton John! Entregue a ele a fita cassete.',
+      choice2: 'É ele ou eu! Você pega a faca e o esfaqueia.',
+    ),
+    Story(
+      storyTitle:
+          'O que? Que policial fora! Você sabia que os acidentes de trânsito são a segunda principal causa de morte acidental na maioria das faixas etárias adultas?',
+      choice1: 'Reiniciar',
       choice2: '',
     ),
     Story(
       storyTitle:
-          'As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.',
-      choice1: 'Restart',
+          'Enquanto você quebra o guardrail e se inclina para as rochas irregulares abaixo, você reflete sobre a duvidosa sabedoria de esfaquear alguém enquanto ele está dirigindo o carro em que você está.',
+      choice1: 'Reiniciar',
       choice2: '',
     ),
     Story(
       storyTitle:
-          'You bond with the murderer while crooning verses of "Can you feel the love tonight". He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: "Try the pier".',
-      choice1: 'Restart',
+          'Você se relaciona com o assassino enquanto canta versos de "Can you feel the love tonight". Ele te deixa na próxima cidade. Antes de você ir, ele pergunta se você conhece algum bom lugar para despejar corpos. Você responde: "Experimente o cais".',
+      choice1: 'Reiniciar',
       choice2: '',
     ),
   ];
@@ -59,9 +59,9 @@ class StoryBrain {
   String getChoise2() {
     return _storyData[_storyNumber].choice2;
   }
-//TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
+//Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
-//TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
+//Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
   int _storyNumber = 0;
 //Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
   void nextStory(int choiseNumber) {
@@ -87,7 +87,14 @@ class StoryBrain {
   int restart() {
     return _storyNumber = 0;
   }
-//Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
 
-//TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
+//Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
+//Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
+  bool buttonShouldBeVisible() {
+    if (_storyNumber == 0 || _storyNumber == 1 || _storyNumber == 2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

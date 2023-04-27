@@ -23,3 +23,9 @@
 - Criado método para resetar as perguntas caso chegue nas etapas 3, 4 ou 5;
 - Adicionado o _storyNumber dentro do getStory(), getChoise1() e getChoise2();
 - Adicionado setState para atualizar a tela.
+
+# Steps 25-28 : 1.0.5
+- Fazer com que o segundo botão não apareça quando chegar na parte de restart, usando o Widget Visibility antes do ElevatedButton;
+- Criei método chamado buttonShouldBeVisible() para retornar um true or false;
+- Adicionado visible dentro do Visibility, apontando para o storyBrain.buttonShouldBeVisible();
+- Alterado a linguagem para PT-BR.
