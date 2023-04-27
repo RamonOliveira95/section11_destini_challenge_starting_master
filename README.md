@@ -16,5 +16,10 @@
 - Criado método para chamar a próxima história;
 - Adicionado o método na Main para teste.
 
-# Step 21 - 1.0.3
+# Step 21 : 1.0.3
 - Criado condições para ir direcionando a história para onde tem que ir.
+
+# Steps 22-24 : 1.0.4
+- Criado método para resetar as perguntas caso chegue nas etapas 3, 4 ou 5;
+- Adicionado o _storyNumber dentro do getStory(), getChoise1() e getChoise2();
+- Adicionado setState para atualizar a tela.
