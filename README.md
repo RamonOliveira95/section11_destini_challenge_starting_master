@@ -10,3 +10,8 @@
 # Steps 11-15 : 1.0.1
 - Criado métodos para pegar as escolhas 1 e 2 do usuário;
 - Adicionado os métodos no main.
+
+# Steps 16-20 : 1.0.2
+- Criado variável para começar a história do início;
+- Criado método para chamar a próxima história;
+- Adicionado o método na Main para teste.
