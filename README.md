@@ -15,3 +15,6 @@
 - Criado variável para começar a história do início;
 - Criado método para chamar a próxima história;
 - Adicionado o método na Main para teste.
+
+# Step 21 - 1.0.3
+- Criado condições para ir direcionando a história para onde tem que ir.
